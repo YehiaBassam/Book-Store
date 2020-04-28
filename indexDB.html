@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="indexDB.css" rel="stylesheet">
+</head>
+<body>
+    
+        <h1>IndexedDB Demo: storing books example</h1>
+    
+        <div id="msg">
+        </div>
+    
+        <form id="addForm">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="book-title" class="required">
+                    Title:
+                  </label>
+                </td>
+                <td>
+                  <input type="text" id="bookTitle" name="book-title">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="book-sn" class="required">
+                        S/N:<br>
+                  </label>
+                </td>
+                <td>
+                  <input type="text" id="bookSn" name="book-sn">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="book-year">
+                    Year:
+                  </label>
+                </td>
+                <td>
+                  <input type="number" id="bookYear" name="book-year">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    
+          <div class="button-pane">
+            <input type="button" id="addButton" value="Add Book">
+            <input type="reset" id="addFormReset">
+          </div>
+        </form>
+    
+        <form id="deleteForm">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="book-id-to-delete">
+                     S/N:<br>
+                    <span class="note">(ISBN, ISSN, etc.)</span>
+                  </label>
+                </td>
+                <td>
+                  <input type="text" id="snToDelete" name="sn-to-delete">
+                </td>
+              </tr>
+              <tr>
+                    <td>
+                      <label for="id-to-delete">
+                        ID:<br>
+                        <span class="note">(for example 1, 2, 3, etc.)</span>
+                      </label>
+                    </td>
+                    <td>
+                      <input type="text" id="idToDelete" name="id-to-delete">
+                    </td>
+                  </tr>
+            </tbody>
+          </table>
+          <div class="button-pane">
+            <input type="button" id="deleteButton" value="Delete">
+            <input type="button" id="clearStoreButton" value="Clear the whole store" class="destructive">
+          </div>
+        </form>
+    
+        <form id="search-form">
+          <div class="button-pane">
+            <input type="button" id="searchListButton" value="List database content">
+          </div>
+        </form>
+    
+        <div>
+          <div id="bookMsg">
+          </div>
+          <div id="bookViewer">
+          </div>
+          <ul id="bookList">
+          </ul>
+        </div>
+    
+    <script src="jquery-3.4.1.js"></script>
+    <script src="indexDB.js"></script>
+</body>
+</html>
